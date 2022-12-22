@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desencriptador Alura</title>
+    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <img src="Vector.png"width="32" height="48" alt="logo-alura">
+
+
+    <main class="main">
+        <section class="form box">
+            <h1>Encriptador ONE</h1>
+            <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Digite aqui"> 
+            <input class="button" type="submit" value="criptografar" id="button-encriptar">
+            <input class="button" type="submit" value="descriptografar" id="button-desencriptar">
+        </section>
+      
+        <section class="msg box">
+          <h2 id="">Digite seu texto</h2>
+          <input class="text-input" type="text" id="resultado" placeholder="Seu Resultado">
+          <input class="button" type="submit" value="copiar" id="button-copy">
+        </section>
+        <div class="container">
+            <p>Resultado</p>
+        </div>
+      </main>
+</body>
+</html>
+  <script>
+    alert('Só escreva com letras minúsculas');
+    var inputEncriptar = document.querySelector("#input-texto");
+
+    var buttonEncriptar = document.querySelector("#button-encriptar");
+
+    var buttonDesencriptar = document.querySelector("#button-desencriptar");
+
+    var buttonCopiar = document.querySelector("#button-copy");
+
+    var inputResultado = document.querySelector("#resultado");
+
+
+    function encriptar () {
+        var mensagem = inputEncriptar.value;
+        var resultado1 = mensagem.replaceAll("e", "enter");
+        var resultado2 = resultado1.replaceAll("i", "imes");
+        var resultado3 = resultado2.replaceAll("a", "ai");
+        var resultado4 = resultado3.replaceAll("u", "ufat");
+        var resultado5 = resultado4.replaceAll("o", "ober");
+
+        inputResultado.value = resultado5;
+
+    }
+
+
+    function desencriptar () {
+        var mensagem = inputEncriptar.value;
+        var resultado1 = mensagem.replaceAll("enter", "e");
+        var resultado2 = resultado1.replaceAll("imes", "i");
+        var resultado3 = resultado2.replaceAll("ai", "a");
+        var resultado4 = resultado3.replaceAll("ufat", "u");
+        var resultado5 = resultado4.replaceAll("ober", "o");
+
+        inputResultado.value = resultado5;
+    }
+
+
+    function copiarTexto(){
+        var resultado = inputResultado.value;
+        navigator.clipboard.writeText(resultado);
+    }
+
+    buttonEncriptar.onclick = encriptar;
+
+    buttonDesencriptar.onclick = desencriptar;
+
+    buttonCopiar.onclick = copiarTexto;
+    </script>
+    
+
+    <footer>
+        Desencriptador by <strong>Carlos Roberto Streppel</strong> 
+    </footer>
